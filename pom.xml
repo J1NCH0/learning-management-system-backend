@@ -97,6 +97,11 @@
             <artifactId>spring-boot-starter-validation</artifactId>
             <version>3.5.0</version>
         </dependency>
+        <!--mail sender-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
     </dependencies>
 
     <modules>
