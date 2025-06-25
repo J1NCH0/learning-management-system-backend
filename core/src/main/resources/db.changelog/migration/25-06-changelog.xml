@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd"
+                   objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="1" author="otoap">
+        <createTable tableName="mail" schemaName="core">
+            <column name="id" autoIncrement="true" type="bigserial" >
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="subject" type="varchar(255)"/>
+            <column name="text" type="varchar(500)"/>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="user_id_fk1" references="core.users(id)"/>
+            </column>
+            <column name="is_delivered" defaultValueBoolean="false" type="boolean"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
